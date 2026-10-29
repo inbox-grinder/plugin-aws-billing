@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "1",
+  "id": "com.inboxgrinder.examples.aws-billing",
+  "name": "AWS Billing",
+  "description": "Extracts AWS billing statement amount, account suffix, payment method, and billing links.",
+  "version": "0.1.0",
+  "runtime": "wasm-component",
+  "entrypoint": "aws_billing.wasm",
+  "publisher": {
+    "name": "Inbox Grinder",
+    "repository": "https://github.com/inbox-grinder/plugin-aws-billing"
+  },
+  "compatibility": {
+    "inboxGrinderApi": "0.1"
+  },
+  "permissions": [
+    "read_metadata",
+    "read_headers",
+    "read_text_body",
+    "read_html_body",
+    "read_links",
+    "suggest_archive",
+    "open_url"
+  ],
+  "matches": {
+    "fromAddresses": [
+      "invoicing@aws.com"
+    ],
+    "fromDomains": [
+      "aws.com"
+    ],
+    "subjectContains": [
+      "Amazon Web Services Billing Statement Available"
+    ]
+  },
+  "contentNeeds": {
+    "metadata": true,
+    "headers": [
+      "Message-ID"
+    ],
+    "textBody": true,
+    "htmlBody": true,
+    "links": true,
+    "attachments": "none"
+  },
+  "templates": [
+    {
+      "id": "aws-billing-statement",
+      "kind": "declarative",
+      "path": "template.json"
+    }
+  ],
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "autoArchivePaidStatements": {
+        "type": "boolean",
+        "default": false
+      }
+    }
+  },
+  "catalogue": {
+    "categories": [
+      "finance"
+    ]
+  }
+}

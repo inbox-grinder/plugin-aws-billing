@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "1",
+  "type": "aws.billing_statement",
+  "template": "aws-billing-statement",
+  "confidence": 0.97,
+  "summary": "AWS bill $12.34 for account ending 9012",
+  "fields": {
+    "vendor": "Amazon Web Services",
+    "accountSuffix": "9012",
+    "total": "$12.34",
+    "currency": "USD",
+    "defaultPaymentCardSuffix": "4242",
+    "billingPeriod": "2026-06"
+  },
+  "actions": [
+    {
+      "id": "open-bill",
+      "kind": "open_url",
+      "label": "Open Bill",
+      "url": "https://console.aws.amazon.com/billing/home#/bills?year=2026&month=6"
+    },
+    {
+      "id": "open-payment-history",
+      "kind": "open_url",
+      "label": "Payment History",
+      "url": "https://console.aws.amazon.com/billing/home#/paymenthistory"
+    },
+    {
+      "id": "archive",
+      "kind": "suggest_archive",
+      "label": "Archive"
+    }
+  ],
+  "automationHints": [
+    {
+      "kind": "archive_after",
+      "condition": "statement_available",
+      "defaultEnabled": false,
+      "configKey": "autoArchivePaidStatements"
+    }
+  ]
+}

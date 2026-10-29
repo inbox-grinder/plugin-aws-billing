@@ -1,0 +1,4 @@
+{
+  "kind": "rust-wasm",
+  "crate": "aws_billing"
+}

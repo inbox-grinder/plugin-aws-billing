@@ -1,0 +1,45 @@
+{
+  "message": {
+    "accountId": "account-personal",
+    "mailboxName": "INBOX",
+    "uid": 9901,
+    "messageId": "<aws-billing-fixture@example.com>",
+    "size": 8192
+  },
+  "sender": {
+    "name": "Amazon Web Services",
+    "address": "invoicing@aws.com",
+    "domain": "aws.com"
+  },
+  "recipients": {
+    "to": [
+      {
+        "name": "User",
+        "address": "mail@example.com",
+        "domain": "example.com"
+      }
+    ],
+    "cc": [],
+    "bcc": []
+  },
+  "subject": "Amazon Web Services Billing Statement Available [Account: 123456789012]",
+  "date": "2026-07-01T23:29:37Z",
+  "headers": {
+    "Message-ID": "<aws-billing-fixture@example.com>"
+  },
+  "textBody": "Greetings from Amazon Web Services,\n\nThis e-mail confirms that your latest billing statement, for the account ending in ****9012, is available on the AWS web site. Your account will be charged the following:\n\nTotal: $12.34\n\nThe credit card ending in 4242 is currently your default payment method for your AWS charges. Please visit the Payment History page in your Billing and Cost Management Console https://console.aws.amazon.com/billing/home#/paymenthistory to review the invoice status and complete any required payments to avoid service disruptions.\n\nYou can see a complete break down of all charges on the Billing & Cost Management page located here:\n\nhttps://console.aws.amazon.com/billing/home#/bills?year=2026&month=6\n\nThank you for using Amazon Web Services.",
+  "htmlBody": null,
+  "links": [
+    {
+      "url": "https://console.aws.amazon.com/billing/home#/paymenthistory",
+      "text": "Payment History",
+      "domain": "console.aws.amazon.com"
+    },
+    {
+      "url": "https://console.aws.amazon.com/billing/home#/bills?year=2026&month=6",
+      "text": "Billing details",
+      "domain": "console.aws.amazon.com"
+    }
+  ],
+  "attachments": []
+}

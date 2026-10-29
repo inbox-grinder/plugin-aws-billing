@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1",
+  "id": "aws-billing-statement",
+  "name": "AWS Billing Statement",
+  "layout": {
+    "kind": "field-list",
+    "title": "{{summary}}",
+    "fields": [
+      { "label": "Account", "value": "****{{fields.accountSuffix}}" },
+      { "label": "Total", "value": "{{fields.total}}" },
+      { "label": "Billing period", "value": "{{fields.billingPeriod}}" },
+      { "label": "Payment card", "value": "****{{fields.defaultPaymentCardSuffix}}" }
+    ]
+  }
+}
